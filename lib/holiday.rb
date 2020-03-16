@@ -66,12 +66,7 @@ def all_supplies_in_holidays(holiday_hash)
   holidays = []
   supplies = []
   holiday_hash.each do |season, holiday_objects|
-    season_name_array = season.to_s
-    season_name_array_capitalized = season_name_array.collect do |word|
-      word.capitalize!
-    end
-    seasons << season_name_array_capitalized.join(" ")
-    puts season_name_array_capitalized.join(" ") + ":"
+    puts season.to_s.capitalize! + ":"
     holiday_objects.each do |holiday, supply_array|
       holiday_name_array = holiday.to_s.split("_")
       holiday_name_array_capitalized = holiday_name_array.collect do |name|
@@ -80,6 +75,7 @@ def all_supplies_in_holidays(holiday_hash)
       holidays << holiday_name_array_capitalized.join(" ")
       supplies << supply_array.join(", ")
       puts "  " + holiday_name_array_capitalized.join(" ") + ": " + supply_array.join(", ")
+      binding.pry
     end
   end
 end
