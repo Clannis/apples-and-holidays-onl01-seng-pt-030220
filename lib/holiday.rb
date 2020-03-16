@@ -72,10 +72,10 @@ def all_supplies_in_holidays(holiday_hash)
       holiday_name_array_capitalized = holiday_name_array.collect do |name|
         name.capitalize!
       end
-      holidays << holiday_name_array_capitalized.join(" ")
+
       supplies << supply_array.join(", ")
       puts "  " + holiday_name_array_capitalized.join(" ") + ": " + supply_array.join(", ")
-      binding.pry
+  
     end
   end
 end
