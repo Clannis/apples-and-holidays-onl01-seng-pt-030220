@@ -66,7 +66,7 @@ def all_supplies_in_holidays(holiday_hash)
   holidays = []
   supplies = []
   holiday_hash.each do |season, holiday_objects|
-    season_name_array = season.to_s.split("_")
+    season_name_array = season.to_s
     season_name_array_capitalized = season_name_array.collect do |word|
       word.capitalize!
     end
@@ -99,3 +99,20 @@ def all_holidays_with_bbq(holiday_hash)
   end
   holidays_with_BBQ
 end
+
+holiday_hash = {
+  :winter => {
+    :christmas => ["Lights", "Wreath"],
+    :new_years => ["Party Hats"]
+  },
+  :summer => {
+    :fourth_of_july => ["Fireworks", "BBQ"]
+  },
+  :fall => {
+    :thanksgiving => ["Turkey"]
+  },
+  :spring => {
+    :memorial_day => ["BBQ"]
+  }
+}
+all_supplies_in_holidays(holiday_hash)
